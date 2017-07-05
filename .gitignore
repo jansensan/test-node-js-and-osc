@@ -11,5 +11,10 @@
 
 ### PROJECT DIRECTORIES AND FILES ###
 *.log
+.env
 /assets
 /node_modules
+/src/node/.env
+/src/node/node_modules
+/src/www/.env
+/src/www/node_modules
