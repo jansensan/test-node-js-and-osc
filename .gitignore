@@ -1,0 +1,15 @@
+### IGNORE FILES FROM GIT ###
+
+### MAC OSX FILES ###
+*._*
+*.DS_STORE
+
+### MOCKUPS ETC. ###
+*.psd
+*.ai
+*.indd
+
+### PROJECT DIRECTORIES AND FILES ###
+*.log
+/assets
+/node_modules
