@@ -3,7 +3,17 @@
 Services for the OSC messages.
 
 
-## Environment Variables
+
+## Technical Requirements
+
+### Dependencies
+
+Ensure you install these modules globally:
+
+- [Node](https://nodejs.org/)
+
+
+### Environment Variables
 
 The application requires a few environment variables, however for security reasons, those cannot be included in the repository.
 
