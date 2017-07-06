@@ -2,12 +2,12 @@
   "name": "osc-services",
   "version": "0.0.1",
   "description": "OSC services",
-  "main": "index.js",
+  "author": "Mat Janson Blanchet <mat.jb@jansensan.net> (http://jansensan.net)",
+  "license": "UNLICENSED",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon server.js"
   },
-  "author": "",
-  "license": "UNLICENSED",
   "dependencies": {
     "body-parser": "^1.17.2",
     "dotenv": "^4.0.0",
