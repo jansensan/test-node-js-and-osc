@@ -16,5 +16,5 @@
 /node_modules
 /src/node/.env
 /src/node/node_modules
-/src/www/.env
-/src/www/node_modules
+/src/web/.env
+/src/web/node_modules
