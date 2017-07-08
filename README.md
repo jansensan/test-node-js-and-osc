@@ -15,68 +15,62 @@ The intent of this project is to use the Pi with a screen. From that screen, the
 
 These steps take into account that the Pi is brand new out of the box.
 
-0. Install [Raspbian](https://www.raspberrypi.org/downloads/) on the Pi
+1. Install [Raspbian](https://www.raspberrypi.org/downloads/) on the Pi
 
-0. Install [Node](https://nodejs.org/) on the Pi (the version that comes with the Pi is out of date)
+2. Install [Node](https://nodejs.org/) on the Pi (the version that comes with the Pi is out of date)
 
     ```
     curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
     sudo apt-get install -y nodejs
     ```
 
-0. Download master branch `.zip` from the repository
+3. Download master branch `.zip` from the repository
 
-0. Unzip the downloaded file
+4. Unzip the downloaded file
 
-0. Copy directories:
+5. Copy directories:
 
     a. Node server: `/home/pi/Downloads/test-node-js-and-osc-master/src/node/` to `/var/www/osc-api/node/`
     
-    a. Web UI: `/home/pi/Downloads/test-node-js-and-osc-master/src/web/www/` to `/var/www/osc-api/www/`
+    b. Web UI: `/home/pi/Downloads/test-node-js-and-osc-master/src/web/www/` to `/var/www/osc-api/www/`
 
-0. Go to `/var/www/osc-api/node/` to install the Node module dependencies
+6. Go to `/var/www/osc-api/node/` to install the Node module dependencies
 
     a. Fix the issue with the `serialport` Node module  
        When installing the `osc` Node module, [there is an issue](https://github.com/EmergingTechnologyAdvisors/node-serialport/issues/649) with `serialport`. Here are the steps to fix the issue:
 
-        0. Install `node-gyp`
+		1. Install `node-gyp`
 
-            ```
-            sudo npm install -g node-gyp
-            ```
+				sudo npm install -g node-gyp
+
     
-        0. Install `serialport`
+		2. Install `serialport`
 
-            ```
-            sudo npm install --unsafe-perm serialport --build-from-source
-            ```
+				sudo npm install --unsafe-perm serialport --build-from-source
 
-    a. Install the remaining Node modules dependencies
+
+    b. Install the remaining Node modules dependencies
     
-    ```
-    sudo npm install
-    ```
+		sudo npm install
 
-0. Create an `.env` file in `/var/www/osc-api/node/`  
+
+7. Create an `.env` file in `/var/www/osc-api/node/`  
 See the instructions in the [Node server read me file](./src/node/README.md).
 
-0. Install [Nginx](https://nginx.org/en/)
+8. Install [Nginx](https://nginx.org/en/)
 
-    ```
-    sudo apt-get install nginx
-    ```
+		sudo apt-get install nginx
 
-0. Setup Nginx
+
+9. Setup Nginx
 
     a. Add `osc-api` to `/etc/nginx/sites-available/`
 
-    a. Delete `default` from `/etc/nginx/sites-enabled/`
+    b. Delete `default` from `/etc/nginx/sites-enabled/`
     
-    a. Create a symlink of `osc-api`
+    c. Create a symlink of `osc-api`
     
-        ```
-        sudo ln -s /etc/nginx/sites-available/osc-api /etc/nginx/sites-enabled/
-        ```
+			sudo ln -s /etc/nginx/sites-available/osc-api /etc/nginx/sites-enabled/
 
 
 ## Running the Different Components
