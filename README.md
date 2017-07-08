@@ -77,10 +77,10 @@ See the instructions in the [Node server read me file](./src/node/README.md).
 
 Once all the components are set up on the Pi, it's now possible to run all the projects:
 
-0. Open the Max patch from a computer on the same network as the Pi
-0. Start the Nginx server
-0. Start the Node service
-0. Open a browser on the Pi at [http://localhost/](http://localhost/)
+1. Open the Max patch from a computer on the same network as the Pi
+2. Start the Nginx server
+3. Start the Node service
+4. Open a browser on the Pi at [http://localhost/](http://localhost/)
 
 Once all of these are running, using the buttons will send OSC messages from the Pi to the Max patch.
 
