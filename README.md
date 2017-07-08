@@ -64,7 +64,7 @@ See the instructions in the [Node server read me file](./src/node/README.md).
 
 9. Setup Nginx
 
-    a. Add `osc-api` to `/etc/nginx/sites-available/`
+    a. Copy `/var/www/osc-api/node/nginx-setup/osc-api` to `/etc/nginx/sites-available/`
 
     b. Delete `default` from `/etc/nginx/sites-enabled/`
     
