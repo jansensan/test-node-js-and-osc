@@ -1,7 +1,6 @@
 # NodeJS OSC Services
 
-Services for the OSC messages.
-
+Node services for the OSC messages.
 
 
 ## Technical Requirements
