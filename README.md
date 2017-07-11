@@ -8,7 +8,8 @@ The intent of this project is to use the Pi with a screen. From that screen, the
 ## Technical Requirements
 
 - A [Raspberry Pi](https://www.raspberrypi.org/)
-- [Max](https://cycling74.com/products/max/). While the receiving application is built in Max, but really any software that receives OSC messages can do the trick.
+- Any software that receives OSC messages. This project currently has [
+Max](https://cycling74.com/products/max/) patch and a [Processing](https://processing.org/) sketch to demo two different apps that receive OSC messages.
 
 
 ## Setting Up the Raspberry Pi
@@ -82,7 +83,7 @@ Once all the components are set up on the Pi, it's now possible to run all the p
 3. Start the Node service
 4. Open a browser on the Pi at [http://localhost/](http://localhost/)
 
-Once all of these are running, using the buttons will send OSC messages from the Pi to the Max patch.
+Once all of these are running, using the buttons will send OSC messages from the Pi to the receving applications.
 
 
 

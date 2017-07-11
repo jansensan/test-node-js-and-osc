@@ -20,5 +20,7 @@ Instead, create a `.env` file at the root of the `src/node` directory in which y
 
     LOCAL_ADDRESS =
     LOCAL_PORT =
-    REMOTE_ADDRESS =
-    REMOTE_PORT =
+    MAX_ADDRESS =
+    MAX_PORT =
+    PROCESSING_ADDRESS =
+    PROCESSING_PORT =

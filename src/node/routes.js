@@ -10,33 +10,15 @@ module.exports = function(app) {
   });
 
   app.get('/', getHome);
-  app.get('/osc/send-value-1', sendValue1);
-  app.get('/osc/send-value-2', sendValue2);
-  app.get('/osc/send-value-3', sendValue3);
-  app.get('/osc/send-value-4', sendValue4);
+  app.get('/max/send-value-1', oscApi.sendMaxValue1);
+  app.get('/max/send-value-2', oscApi.sendMaxValue2);
+  app.get('/max/send-value-3', oscApi.sendMaxValue3);
+  app.get('/max/send-value-4', oscApi.sendMaxValue4);
+  app.get('/pde/send-value-1', oscApi.sendProcessingValue1);
+  app.get('/pde/send-value-2', oscApi.sendProcessingValue2);
 
   // methods definitions
   function getHome(request, response) {
     response.send('<h1>Node OSC services</h1>');
-  }
-
-  function sendValue1(request, response) {
-    oscApi.sendValue1();
-    response.send('Value 1 sent.');
-  }
-
-  function sendValue2(request, response) {
-    oscApi.sendValue2();
-    response.send('Value 2 sent.');
-  }
-
-  function sendValue3(request, response) {
-    oscApi.sendValue3();
-    response.send('Value 3 sent.');
-  }
-
-  function sendValue4(request, response) {
-    oscApi.sendValue4();
-    response.send('Value 4 sent.');
   }
 };

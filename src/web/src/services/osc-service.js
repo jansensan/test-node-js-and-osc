@@ -1,9 +1,13 @@
 // public api
 let OSCService = {
-  sendValue1: sendValue1,
-  sendValue2: sendValue2,
-  sendValue3: sendValue3,
-  sendValue4: sendValue4,
+  // max methods
+  sendMaxValue1: sendMaxValue1,
+  sendMaxValue2: sendMaxValue2,
+  sendMaxValue3: sendMaxValue3,
+  sendMaxValue4: sendMaxValue4,
+  // processing methods
+  sendProcessingValue1: sendProcessingValue1,
+  sendProcessingValue2: sendProcessingValue2,
 };
 export default OSCService;
 
@@ -14,20 +18,28 @@ const PORT = 3000;
 const BASE_URL = 'http://' + DOMAIN + ':' + PORT + '/';
 
 // methods definitions
-function sendValue1() {
-  sendRequest('osc/send-value-1');
+function sendMaxValue1() {
+  sendRequest('max/send-value-1');
 }
 
-function sendValue2() {
-  sendRequest('osc/send-value-2');
+function sendMaxValue2() {
+  sendRequest('max/send-value-2');
 }
 
-function sendValue3() {
-  sendRequest('osc/send-value-3');
+function sendMaxValue3() {
+  sendRequest('max/send-value-3');
 }
 
-function sendValue4() {
-  sendRequest('osc/send-value-4');
+function sendMaxValue4() {
+  sendRequest('max/send-value-4');
+}
+
+function sendProcessingValue1() {
+  sendRequest('pde/send-value-1');
+}
+
+function sendProcessingValue2() {
+  sendRequest('pde/send-value-2');
 }
 
 

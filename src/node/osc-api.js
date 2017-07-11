@@ -11,10 +11,14 @@ module.exports = function() {
     ADDRESS: process.env.LOCAL_ADDRESS,
     PORT: process.env.LOCAL_PORT
   };
-  var Remote = {
-    ADDRESS: process.env.REMOTE_ADDRESS,
-    PORT: process.env.REMOTE_PORT
-  }
+  var Max = {
+    ADDRESS: process.env.MAX_ADDRESS,
+    PORT: process.env.MAX_PORT
+  };
+  var Processing = {
+    ADDRESS: process.env.PROCESSING_ADDRESS,
+    PORT: process.env.PROCESSING_PORT
+  };
 
 
   // vars
@@ -25,16 +29,21 @@ module.exports = function() {
 
   // public api
   return {
-    sendValue1: sendValue1,
-    sendValue2: sendValue2,
-    sendValue3: sendValue3,
-    sendValue4: sendValue4,
+    // max methods
+    sendMaxValue1: sendMaxValue1,
+    sendMaxValue2: sendMaxValue2,
+    sendMaxValue3: sendMaxValue3,
+    sendMaxValue4: sendMaxValue4,
+    // processing methods methods
+    sendProcessingValue1: sendProcessingValue1,
+    sendProcessingValue2: sendProcessingValue2,
   };
 
 
   // methods definitions
-  function sendValue1(req, res) {
+  function sendMaxValue1(request, response) {
     sendValue(
+      Max,
       '/1',
       [
         {
@@ -43,10 +52,12 @@ module.exports = function() {
         }
       ]
     );
+    response.send('Value 1 sent to Max.');
   }
 
-  function sendValue2(req, res) {
+  function sendMaxValue2(request, response) {
     sendValue(
+      Max,
       '/2',
       [
         {
@@ -55,10 +66,12 @@ module.exports = function() {
         }
       ]
     );
+    response.send('Value 2 sent to Max.');
   }
 
-  function sendValue3(req, res) {
+  function sendMaxValue3(request, response) {
     sendValue(
+      Max,
       '/3',
       [
         {
@@ -67,10 +80,12 @@ module.exports = function() {
         }
       ]
     );
+    response.send('Value 3 sent to Max.');
   }
 
-  function sendValue4(req, res) {
+  function sendMaxValue4(request, response) {
     sendValue(
+      Max,
       '/4',
       [
         {
@@ -79,6 +94,35 @@ module.exports = function() {
         }
       ]
     );
+    response.send('Value 4 sent to Max.');
+  }
+
+  function sendProcessingValue1(request, response) {
+    sendValue(
+      Processing,
+      '/pde',
+      [
+        {
+          type: 'i',
+          value: 256
+        }
+      ]
+    );
+    response.send('Value 1 sent to Processing.');
+  }
+
+  function sendProcessingValue2(request, response) {
+    sendValue(
+      Processing,
+      '/pde',
+      [
+        {
+          type: 'i',
+          value: 512
+        }
+      ]
+    );
+    response.send('Value 2 sent to Processing.');
   }
 
   // private methods definitions
@@ -114,7 +158,7 @@ module.exports = function() {
     console.log(error);
   }
 
-  function sendValue(oscAddress, oscData) {
+  function sendValue(device, oscAddress, oscData) {
     _portOpened.removeAll();
     _portOpened.add(function() {
       // send OSC message
@@ -123,8 +167,8 @@ module.exports = function() {
           address: oscAddress,
           args: oscData
         },
-        Remote.ADDRESS,
-        Remote.PORT
+        device.ADDRESS,
+        device.PORT
       );
     });
     openPort();

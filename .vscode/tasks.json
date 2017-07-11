@@ -1,0 +1,13 @@
+{
+  "version": "0.1.0",
+  "command": "processing-java",
+  "isBuildCommand": true,
+  "isShellCommand": true,
+  "showOutput": "never",
+  "args": [
+    "--force",
+    "--sketch=${workspaceRoot}/src/processing/osc_receiver",
+    "--output=${workspaceRoot}/src/processing/bin",
+    "--run"
+  ]
+}
